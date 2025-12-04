@@ -1,0 +1,135 @@
+body {
+  background: #f5f7fa;
+}
+
+/* APP CONTAINER */
+.app-container {
+  width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.1);
+  font-family: Arial, sans-serif;
+}
+
+/* INPUT FIELDS */
+.input,
+.edit-input,
+.textarea,
+.edit-textarea {
+  width: 95%;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.input:focus,
+.textarea:focus,
+.edit-input:focus,
+.edit-textarea:focus {
+  border-color: #6c63ff;
+}
+
+/* ADD BUTTON */
+.btn-add {
+  width: 100%;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  background: #574dff;
+}
+
+/* TASK LIST */
+.task-list {
+  background: transparent;
+}
+
+/* TASK CARD */
+.task-card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  margin-bottom: 15px;
+}
+
+/* COMPLETED */
+.task-card.done {
+  border: 2px solid #6c63ff;
+}
+
+/* TITLE BADGE */
+.badge {
+  background: #6c63ff;
+  color: white;
+  border-radius: 8px;
+  padding: 3px 8px;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+/* BUTTON STYLE (ALL BUTTONS BLUE) */
+.btn-group button,
+.btn-save,
+.btn-cancel {
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+/* FIX BUTTON SPACING */
+.btn-group {
+  display: flex;
+  gap: 3px;        /* space between Read, Edit, Delete */
+  margin-top: 8px;
+}
+
+
+/* HOVER EFFECT */
+.btn-group button:hover,
+.btn-save:hover,
+.btn-cancel:hover {
+  background: #574dff;
+}
+
+/* CHECKLIST */
+.checklist {
+  margin-top: 10px;
+  background: #f9f9ff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* STRIKE COMPLETED ITEM */
+.strike {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* EDIT LAYOUT */
+.horizontal-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* EDIT BUTTON AREA */
+.edit-actions {
+  display: flex;
+  gap: 6px;
+}
