@@ -1,25 +1,9 @@
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import SmartCounter from "./SmartCounter";
-// import NextActivity from "./NextActivity";
-
-// function App() {
-//   return (
-//     <Router>
-//       <Routes>
-//         <Route path="/" element={<SmartCounter />} />
-//         <Route path="/next" element={<NextActivity />} />
-//       </Routes>
-//     </Router>
-//   );
-// }
-
-// export default App;
-
 import { useState, useEffect } from "react";
 import TaskList from "./TaskList";
 import "./TaskApp.css";
 
 export default function App() {
+
   const [tasks, setTasks] = useState(() => {
     const saved = localStorage.getItem("tasks");
     return saved ? JSON.parse(saved) : [];
@@ -31,7 +15,7 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
-
+ 
   function addTask() {
     if (!title.trim() || !description.trim()) return;
 
@@ -106,3 +90,16 @@ export default function App() {
     </div>
   );
 }
+
+// import TaskList from "./TaskList";
+// import "./TaskApp.css";
+
+// export default function App() {
+//   return (
+//     <div className="app-container">
+//       <h1>To-Do App</h1>
+//       <TaskList />
+//     </div>
+//   );
+// }
+
