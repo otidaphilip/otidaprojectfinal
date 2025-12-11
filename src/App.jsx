@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import TaskList from "./TaskList";
+import TaskList from "./components/TaskList";
 import "./TaskApp.css";
 
 export default function App() {
@@ -15,7 +15,7 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
- 
+
   function addTask() {
     if (!title.trim() || !description.trim()) return;
 
@@ -36,14 +36,14 @@ export default function App() {
   function editTask(id, newTitle, newDesc) {
     setTasks(tasks.map(task => {
       if (task.id !== id) return task;
-  
+
       const updatedText = newDesc.split("\n");
-  
+
       const newItems = updatedText.map((text, index) => ({
         text,
-        done: task.items[index]?.done || false  //Keep previous state
+        done: task.items[index]?.done || false
       }));
-  
+
       return {
         ...task,
         title: newTitle,
@@ -51,7 +51,7 @@ export default function App() {
       };
     }));
   }
-  
+
   function toggleItem(taskId, index) {
     setTasks(tasks.map(task => {
       if (task.id !== taskId) return task;
@@ -90,16 +90,3 @@ export default function App() {
     </div>
   );
 }
-
-// import TaskList from "./TaskList";
-// import "./TaskApp.css";
-
-// export default function App() {
-//   return (
-//     <div className="app-container">
-//       <h1>To-Do App</h1>
-//       <TaskList />
-//     </div>
-//   );
-// }
-
