@@ -52,7 +52,9 @@ body {
 
 /* TASK LIST */
 .task-list {
-  background: transparent;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  gap: 15px; /* space between cards */
 }
 
 /* TASK CARD */
@@ -107,13 +109,13 @@ body {
   background: #574dff;
 }
 
-/* CHECKLIST */
-.checklist {
-  margin-top: 10px;
-  background: #f9f9ff;
-  padding: 10px;
-  border-radius: 8px;
+.checklist label {
+  display: flex;        /* align checkbox + text */
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;  /* space between items */
 }
+
 
 /* STRIKE COMPLETED ITEM */
 .strike {
@@ -135,9 +137,10 @@ body {
 }
 
 .pagination {
+  grid-column: 1 / -1;     /* 👈 span all columns */
   margin-top: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* 👈 center horizontally */
   align-items: center;
   gap: 12px;
 }

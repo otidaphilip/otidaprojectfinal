@@ -4,7 +4,7 @@ import TaskItem from "./TaskItem";
 export default function TaskList({ tasks, onDelete, onEdit, onToggle }) {
 
   const [currentPage, setCurrentPage] = useState(1);
-  const ITEMS_PER_PAGE = 5; // change this if you want
+  const ITEMS_PER_PAGE = 6; // change this if you want
 
   // Calculate total pages
   const totalPages = Math.ceil(tasks.length / ITEMS_PER_PAGE);
