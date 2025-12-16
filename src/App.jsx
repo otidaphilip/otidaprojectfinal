@@ -16,18 +16,27 @@ export default function App() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
-  function addTask() {
-    if (!title.trim() || !description.trim()) return;
+function addTask() {
+  if (!title.trim() || !description.trim()) return;
 
-    const items = description.split("\n").map(text => ({
-      text,
-      done: false
-    }));
+  const items = description.split("\n").map(text => ({
+    text,
+    done: false
+  }));
 
-    setTasks([...tasks, { id: Date.now(), title, items }]);
-    setTitle("");
-    setDescription("");
-  }
+  const newTask = {
+    id: Date.now(),
+    title,
+    items,
+    createdAt: new Date().toISOString(), // 📅 store date
+  };
+
+  // 🔥 New task goes to TOP
+  setTasks([newTask, ...tasks]);
+
+  setTitle("");
+  setDescription("");
+}
 
   function deleteTask(id) {
     setTasks(tasks.filter(task => task.id !== id));

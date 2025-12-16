@@ -159,3 +159,10 @@ body {
   background: #999;
   cursor: not-allowed;
 }
+
+.task-meta {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
